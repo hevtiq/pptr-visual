@@ -1,0 +1,4 @@
+node_modules
+.vscode
+package-lock.json
+tests-snapshots/__tests__/__image_snapshots__/*

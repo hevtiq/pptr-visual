@@ -31,12 +31,12 @@ describe('Percy Visual Test', () => {
     test('Full Page Percy Snapshot', async () => {
 
         // navigate to page
-        await page.goto('https://www.example.com');
+        await page.goto('https://www.google.com');
 
         // wait for 1s delay time
         await page.waitForTimeout(1000);
 
         // screenshot page
-        await percySnapshot(page, 'Example page')
+        await percySnapshot(page, 'Google page')
     });
 });

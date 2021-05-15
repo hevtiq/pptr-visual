@@ -42,7 +42,7 @@ describe('Percy Visual Test', () => {
     test('Full Page Percy Snapshot', async () => {
 
         // navigate to page
-        await page.goto('https://www.google.com');
+        await page.goto('https://www.google.com', {waitUntil: "networkidle0"});
 
         // wait for 1s delay time
         await page.waitForTimeout(1000);

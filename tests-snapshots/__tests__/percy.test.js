@@ -15,7 +15,18 @@ describe('Percy Visual Test', () => {
     // prepare before test steps run
     beforeAll(async () => {
         // launch a new browser instance
-        browser = await puppeteer.launch({ headless: true });
+        browser = await puppeteer.launch({
+            headless: true,
+            args: [
+                '--ignore-certificate-errors',
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--disable-web-security',
+                // '--proxy-server=your.proxy.domain:port',
+            ],
+        });
 
         // create a new page instance
         page = await browser.newPage();

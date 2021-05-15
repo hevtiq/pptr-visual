@@ -27,7 +27,9 @@ jobs:
       # If you are using yarn instead npm, remove the line above and uncomment the two lines below.
       # - node/install-packages:
       #     pkg-manager: yarn
-      - run: test:percy
+      - run:
+          name: Run tests percy
+          command: test:percy
 
 workflows:
   # Below is the definition of your workflow.

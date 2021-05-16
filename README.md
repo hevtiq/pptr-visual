@@ -1,4 +1,4 @@
-# Automated testing with Puppeteer and Percy
+# Automated testing with Puppeteer and Percy and CI with CircleCI
 
 ## 1. Setup project
 
@@ -51,3 +51,74 @@
 - Setup percy variable to window environment
 
 ## 2. Start project
+
+## 3. Fix error
+
+### 3.1 Error #1
+
+`
+Could not find expected browser (chrome) locally. Run `npm install` to download the correct Chromium revision (856583).
+
+OR
+TypeError: Cannot read property 'goto' of undefined
+
+OR
+Failed to launch the browser process!
+
+=> update latest puppeteer npm install puppeteer@latest
+=> in config.yml change to - image: circleci/node:latest-browsers
+=> in config.yml add run: npm install puppeteer --unsafe-perm=true --allow-root
+`
+
+### 3.2 Error #2
+
+`
+
+No configuration was found in your project. Please refer to https://circleci.com/docs/2.0/ to get started with your configuration.
+=> Add .circleci/config.yml
+
+`
+
+### 3.3 Error #3
+
+`
+error computing cache key: template: cacheKey:1:30: executing "cacheKey" at \<checksum "./package-lock.json">: error calling checksum: open /home/circleci/project/package-lock.json: no such file or directory
+
+OR
+
+npm ERR! The `npm ci` command can only install with an existing package-lock.json or
+
+=> need add package-lock.json to git
+`
+
+### 3.4 Error #4
+
+`
+
+npm ERR! missing script: test
+
+OR
+
+/bin/bash: test:percy: command not found
+
+=> script setup fail: check script setup
+
+`
+
+## 4. True steps
+
+`
+Circle Steps
+
+1. Spin up environment
+2. Preparing environment variables
+3. Checkout code
+4. Checking for package.json
+5. Restoring cache
+6. Installing NPM packages
+7. Saving cache
+8. npm install puppeteer --insafe-perm=true --allow-root
+9. npm install
+10. npm run test: percy
+
+`

@@ -46,8 +46,8 @@ describe('Percy Visual Test', () => {
         // navigate to page
         await page.goto('https://qiita.com', { waitUntil: "networkidle2" });
 
-        // wait for 1s delay time
-        await page.waitForTimeout(1000);
+        // wait for 3s delay time
+        await page.waitForTimeout(3000);
 
         // screenshot page
         await percySnapshot(page, 'Google page')

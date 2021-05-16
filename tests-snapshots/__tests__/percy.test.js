@@ -1,5 +1,3 @@
-// NOTE: need git to complete this lesion
-
 // bring puppeteer module as a middleware
 const puppeteer = require('puppeteer');
 
@@ -18,7 +16,7 @@ describe('Percy Visual Test', () => {
         browser = await puppeteer.launch({
             headless: true,
             ignoreHTTPSErrors: true,
-            devtools: true,
+            devtools: false,
             args: [
                 '--ignore-certificate-errors',
                 '--no-sandbox',

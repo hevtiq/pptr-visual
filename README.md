@@ -105,6 +105,14 @@ OR
 
 `
 
+### 3.5 Error #5
+
+`
+TypeError: percySnapshot is not a function
+=> Need add Env percy variable to circleCI.
+
+`
+
 ## 4. True steps
 
 `
